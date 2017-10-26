@@ -75,9 +75,6 @@ flipped_dcs <- function(d, dcs) {
 }
 
 
-rescale_mat <- function(mat, ...) apply(mat, 2L, scales::rescale, ...)
-
-
 #' @importFrom Biobase sampleNames
 n_samples <- function(data, distances) {
 	if (is.null(data)) nrow(distances)
