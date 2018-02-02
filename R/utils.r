@@ -105,6 +105,8 @@ runs <- function(vec) {
 upper.tri.sparse <- function(x,diag = FALSE){
 # Works just like upper.tri() but doesn't forcibly coerce large 'sparseMatrix' back to 'matrix'
 	if (diag)
-		row(x) <= col(x)
-	else row(x) < col(x)
+		res<-row(x) <= col(x)
+	else res<-row(x) < col(x)
+	res<-as(res,"sparseMatrix")
+	res
 }
